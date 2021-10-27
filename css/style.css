@@ -1,0 +1,25 @@
+body {
+  background-color: #FAFFD8;
+}
+
+.table-responsive-md {
+  background-color: white;
+  margin: 30px;
+}
+
+.in-row-1, .out-row-1 {
+  background-color: #057A4B;
+  color: white;
+}
+
+.in-row-2, .out-row-2 {
+  background-color: #0477C4;
+  color: white;
+}
+
+.in-row-3, .out-row-3 {
+  background-color: #057A4B;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
