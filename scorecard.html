@@ -20,25 +20,29 @@
         </div>
         <div class="form-group">
             <form action="" >
-                <label for="course-select">Select Course</label>
+                <h1>Spanish Oaks ScoreCa</h1>
+                <!-- <label for="course-select">Select Course</label>
                 <select class="form-control" id="course-select" name="courses">
                     <option value="Select">Select</option>
                     <option value="Fox Hollow">Fox Hollow</option>
                     <option value="Thanksgiving Point">Thanksgiving Point</option>
                     <option value="Spanish Oaks">Spanish Oaks</option>
-                </select>
-                <label for="player-select">Number of Players</label>
-                <select class="form-control" id="player-select" name="players">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
+                </select> -->
+                <div>
+                    <label for="player-select">Number of Players</label>
+                    <select class="form-control" id="player-select" name="players">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <input type="button" id="playerButton" value="Add Players">
+                </div>
                 <label for="teeBox-select">Tee Box</label>
                 <select class="form-control" id="teeBox-select" name="teeBox" value="" onchange="selectTeeBox">
                     <option value="">Select Tee Box</option>
                 </select>
-                <button type="submit">New Game!</button>
+                
             </form>
         </div>
           
@@ -106,7 +110,7 @@
                     </tr>
 
                     <tr>
-                        <th scope="row" class="player1In">Player 1</th>
+                        <th scope="row" class="player1Out">Player 1</th>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
@@ -153,8 +157,8 @@
                         <td class="yardIn" id="y16"></td>
                         <td class="yardIn" id="y17"></td>
                         <td class="yardIn" id="y18"></td>
-                        <td id="in-yard-total">in Ytotal</td>
-                        <td id="all-yardage">ALL YARD TOTAL</td>
+                        <td id="in-yard-total"></td>
+                        <td id="all-yardage"></td>
                     </tr>
 
                     <tr class="in-par-row">
@@ -168,8 +172,8 @@
                         <td class="parIn" id="p16"></td>
                         <td class="parIn" id="p17"></td>
                         <td class="parIn" id="p18"></td>
-                        <td id="in-par-total">in Ptotal</td>
-                        <td id="all-par">ALL PAR TOTAL</td>
+                        <td id="in-par-total"></td>
+                        <td id="all-par"></td>
                     </tr>
 
                     <tr>
@@ -183,12 +187,12 @@
                         <td class="handIn" id="h16"></td>
                         <td class="handIn" id="h17"></td>
                         <td class="handIn" id="h18"></td>
-                        <td id="in-hand-total">in Htotal</td>
-                        <td id="all-handicap">ALL HANDI TOTAL</td>
+                        <td id="in-hand-total"></td>
+                        <td id="all-handicap"></td>
                     </tr>
 
                     <tr>
-                        <th scope="row" class="player1In">Player 1</th>
+                        <th scope="row" class="player1In" contenteditable="true"></th>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -198,15 +202,15 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>in Stroke total</td>
-                        <td>ALL STROKE TOTAL</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <template>
-        <th scope="row" class="player1In">Player 1</th>
+        <th scope="row" class="player1In"></th>
         <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
         <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
         <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>

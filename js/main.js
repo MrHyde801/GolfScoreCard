@@ -151,23 +151,23 @@ populateCards(tbIndex)
 
 
 //open up function to whatever I want bow chick wowow (discord chat)
-let holesPar = [0,0,0,0,0,0,0,0,0]
+let outHolesPar = [0,0,0,0,0,0,0,0,0]
 let outParScore = document.getElementById('playerOutTotal')
-let playerScore = document.querySelectorAll('.score-1')
-playerScore.forEach((input,index) => {
+let outPlayerScore = document.querySelectorAll('.score-1')
+outPlayerScore.forEach((input,index) => {
   input.addEventListener('change', e => {
-    holesPar[index] = e.target.value
+    outHolesPar[index] = e.target.value
     calculateTotal()
   })
 })
 
 function calculateTotal() {
   let total = 0;
-  holesPar.forEach(par => {
-    total += parseInt(par)
+  outHolesPar.forEach(parOut => {
+    total += parseInt(parOut)
   })
+
   outParScore.innerHTML = total
-  console.log(outParScore)
 }
 
 
