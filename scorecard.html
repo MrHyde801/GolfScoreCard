@@ -65,29 +65,29 @@
                 <tbody>
                     <tr class="out-yard-row">
                         <th scope="row">Yardage(Tee)</th>
-                        <td class="yardOut" id="y1">y1</td>
-                        <td class="yardOut" id="y2">y1</td>
-                        <td class="yardOut" id="y3">y1</td>
-                        <td class="yardOut" id="y4">y1</td>
-                        <td class="yardOut" id="y5">y1</td>
-                        <td class="yardOut" id="y6">y1</td>
-                        <td class="yardOut" id="y7">y1</td>
-                        <td class="yardOut" id="y8">y1</td>
-                        <td class="yardOut" id="y9">y1</td>
+                        <td class="yardOut" id="y1"></td>
+                        <td class="yardOut" id="y2"></td>
+                        <td class="yardOut" id="y3"></td>
+                        <td class="yardOut" id="y4"></td>
+                        <td class="yardOut" id="y5"></td>
+                        <td class="yardOut" id="y6"></td>
+                        <td class="yardOut" id="y7"></td>
+                        <td class="yardOut" id="y8"></td>
+                        <td class="yardOut" id="y9"></td>
                         <td id="out-yard-total">out Ytotal</td>
                     </tr>
 
                     <tr class="out-par-row">
                         <th scope="row">Par</th>
-                        <td class="parOut" id="p1">1</td>
-                        <td class="parOut" id="p2">2</td>
-                        <td class="parOut" id="p3">3</td>
-                        <td class="parOut" id="p4">4</td>
-                        <td class="parOut" id="p5">5</td>
-                        <td class="parOut" id="p6">6</td>
-                        <td class="parOut" id="p7">7</td>
-                        <td class="parOut" id="p8">8</td>
-                        <td class="parOut" id="p9">9</td>
+                        <td class="parOut" id="p1"></td>
+                        <td class="parOut" id="p2"></td>
+                        <td class="parOut" id="p3"></td>
+                        <td class="parOut" id="p4"></td>
+                        <td class="parOut" id="p5"></td>
+                        <td class="parOut" id="p6"></td>
+                        <td class="parOut" id="p7"></td>
+                        <td class="parOut" id="p8"></td>
+                        <td class="parOut" id="p9"></td>
                         <td id="out-par-total">out Ptotal</td>
                     </tr>
 
@@ -107,7 +107,6 @@
 
                     <tr>
                         <th scope="row" class="player1In">Player 1</th>
-                        <td><input type="number" onchange="saveValue(this)" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
@@ -116,7 +115,8 @@
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-                        <td>out Stroke total</td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td id="playerOutTotal"></td>
                     </tr>
                 </tbody>
             </table>
@@ -144,32 +144,32 @@
                 <tbody>
                     <tr class="in-yard-row">
                         <th scope="row">Yardage(Tee)</th>
-                        <td class="yardIn" id="y10">y10</td>
-                        <td class="yardIn" id="y11">y11</td>
-                        <td class="yardIn" id="y12">y12</td>
-                        <td class="yardIn" id="y13">y13</td>
-                        <td class="yardIn" id="y14">y14</td>
-                        <td class="yardIn" id="y15">y15</td>
-                        <td class="yardIn" id="y16">y16</td>
-                        <td class="yardIn" id="y17">y17</td>
-                        <td class="yardIn" id="y18">y18</td>
+                        <td class="yardIn" id="y10"></td>
+                        <td class="yardIn" id="y11"></td>
+                        <td class="yardIn" id="y12"></td>
+                        <td class="yardIn" id="y13"></td>
+                        <td class="yardIn" id="y14"></td>
+                        <td class="yardIn" id="y15"></td>
+                        <td class="yardIn" id="y16"></td>
+                        <td class="yardIn" id="y17"></td>
+                        <td class="yardIn" id="y18"></td>
                         <td id="in-yard-total">in Ytotal</td>
                         <td id="all-yardage">ALL YARD TOTAL</td>
                     </tr>
 
                     <tr class="in-par-row">
                         <th scope="row">Par</th>
-                        <td class="parIn" id="p10">10</td>
-                        <td class="parIn" id="p11">11</td>
-                        <td class="parIn" id="p12">12</td>
-                        <td class="parIn" id="p13">13</td>
-                        <td class="parIn" id="p14">14</td>
-                        <td class="parIn" id="p15">15</td>
-                        <td class="parIn" id="p16">16</td>
-                        <td class="parIn" id="p17">17</td>
-                        <td class="parIn" id="p18">18</td>
+                        <td class="parIn" id="p10"></td>
+                        <td class="parIn" id="p11"></td>
+                        <td class="parIn" id="p12"></td>
+                        <td class="parIn" id="p13"></td>
+                        <td class="parIn" id="p14"></td>
+                        <td class="parIn" id="p15"></td>
+                        <td class="parIn" id="p16"></td>
+                        <td class="parIn" id="p17"></td>
+                        <td class="parIn" id="p18"></td>
                         <td id="in-par-total">in Ptotal</td>
-                        <td id="all-Par-Score">ALL PAR TOTAL</td>
+                        <td id="all-par">ALL PAR TOTAL</td>
                     </tr>
 
                     <tr>
