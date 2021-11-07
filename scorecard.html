@@ -18,12 +18,31 @@
                 <div id="options-container"></div>
             </div>
         </div>
-
         <div class="form-group">
-            <label for="course-select">Select Course</label>
-            <select class="form-control" id="course-select"></select>
+            <form action="" >
+                <label for="course-select">Select Course</label>
+                <select class="form-control" id="course-select" name="courses">
+                    <option value="Select">Select</option>
+                    <option value="Fox Hollow">Fox Hollow</option>
+                    <option value="Thanksgiving Point">Thanksgiving Point</option>
+                    <option value="Spanish Oaks">Spanish Oaks</option>
+                </select>
+                <label for="player-select">Number of Players</label>
+                <select class="form-control" id="player-select" name="players">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <label for="teeBox-select">Tee Box</label>
+                <select class="form-control" id="teeBox-select" name="teeBox" value="" onchange="selectTeeBox">
+                    <option value="">Select Tee Box</option>
+                </select>
+                <button type="submit">New Game!</button>
+            </form>
         </div>
           
+        
           
         <div class="table-responsive-md">
             <table class="table table-bordered border-dark" id="table1">
@@ -46,57 +65,57 @@
                 <tbody>
                     <tr class="out-yard-row">
                         <th scope="row">Yardage(Tee)</th>
-                        <td class="yardOut">y1</td>
-                        <td class="yardOut">y1</td>
-                        <td class="yardOut">y1</td>
-                        <td class="yardOut">y1</td>
-                        <td class="yardOut">y1</td>
-                        <td class="yardOut">y1</td>
-                        <td class="yardOut">y1</td>
-                        <td class="yardOut">y1</td>
-                        <td class="yardOut">y1</td>
+                        <td class="yardOut" id="y1">y1</td>
+                        <td class="yardOut" id="y2">y1</td>
+                        <td class="yardOut" id="y3">y1</td>
+                        <td class="yardOut" id="y4">y1</td>
+                        <td class="yardOut" id="y5">y1</td>
+                        <td class="yardOut" id="y6">y1</td>
+                        <td class="yardOut" id="y7">y1</td>
+                        <td class="yardOut" id="y8">y1</td>
+                        <td class="yardOut" id="y9">y1</td>
                         <td id="out-yard-total">out Ytotal</td>
                     </tr>
 
                     <tr class="out-par-row">
                         <th scope="row">Par</th>
-                        <td class="parOut">1</td>
-                        <td class="parOut">2</td>
-                        <td class="parOut">3</td>
-                        <td class="parOut">4</td>
-                        <td class="parOut">5</td>
-                        <td class="parOut">6</td>
-                        <td class="parOut">7</td>
-                        <td class="parOut">8</td>
-                        <td class="parOut">9</td>
+                        <td class="parOut" id="p1">1</td>
+                        <td class="parOut" id="p2">2</td>
+                        <td class="parOut" id="p3">3</td>
+                        <td class="parOut" id="p4">4</td>
+                        <td class="parOut" id="p5">5</td>
+                        <td class="parOut" id="p6">6</td>
+                        <td class="parOut" id="p7">7</td>
+                        <td class="parOut" id="p8">8</td>
+                        <td class="parOut" id="p9">9</td>
                         <td id="out-par-total">out Ptotal</td>
                     </tr>
 
                     <tr class="out-hand-row">
                         <th scope="row">Handicap</th>
-                        <td class="handOut"></td>
-                        <td class="handOut"></td>
-                        <td class="handOut"></td>
-                        <td class="handOut"></td>
-                        <td class="handOut"></td>
-                        <td class="handOut"></td>
-                        <td class="handOut"></td>
-                        <td class="handOut"></td>
-                        <td class="handOut"></td>
+                        <td class="handOut" id="h1"></td>
+                        <td class="handOut" id="h2"></td>
+                        <td class="handOut" id="h3"></td>
+                        <td class="handOut" id="h4"></td>
+                        <td class="handOut" id="h5"></td>
+                        <td class="handOut" id="h6"></td>
+                        <td class="handOut" id="h7"></td>
+                        <td class="handOut" id="h8"></td>
+                        <td class="handOut" id="h9"></td>
                         <td id="out-hand-total">out Htotal</td>
                     </tr>
 
                     <tr>
                         <th scope="row" class="player1In">Player 1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="number" onchange="saveValue(this)" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td>out Stroke total</td>
                     </tr>
                 </tbody>
@@ -125,45 +144,45 @@
                 <tbody>
                     <tr class="in-yard-row">
                         <th scope="row">Yardage(Tee)</th>
-                        <td class="yardIn">y10</td>
-                        <td class="yardIn">y11</td>
-                        <td class="yardIn">y12</td>
-                        <td class="yardIn">y13</td>
-                        <td class="yardIn">y14</td>
-                        <td class="yardIn">y15</td>
-                        <td class="yardIn">y16</td>
-                        <td class="yardIn">y17</td>
-                        <td class="yardIn">y18</td>
+                        <td class="yardIn" id="y10">y10</td>
+                        <td class="yardIn" id="y11">y11</td>
+                        <td class="yardIn" id="y12">y12</td>
+                        <td class="yardIn" id="y13">y13</td>
+                        <td class="yardIn" id="y14">y14</td>
+                        <td class="yardIn" id="y15">y15</td>
+                        <td class="yardIn" id="y16">y16</td>
+                        <td class="yardIn" id="y17">y17</td>
+                        <td class="yardIn" id="y18">y18</td>
                         <td id="in-yard-total">in Ytotal</td>
                         <td id="all-yardage">ALL YARD TOTAL</td>
                     </tr>
 
                     <tr class="in-par-row">
                         <th scope="row">Par</th>
-                        <td class="parIn">10</td>
-                        <td class="parIn">11</td>
-                        <td class="parIn">12</td>
-                        <td class="parIn">13</td>
-                        <td class="parIn">14</td>
-                        <td class="parIn">15</td>
-                        <td class="parIn">16</td>
-                        <td class="parIn">17</td>
-                        <td class="parIn">18</td>
+                        <td class="parIn" id="p10">10</td>
+                        <td class="parIn" id="p11">11</td>
+                        <td class="parIn" id="p12">12</td>
+                        <td class="parIn" id="p13">13</td>
+                        <td class="parIn" id="p14">14</td>
+                        <td class="parIn" id="p15">15</td>
+                        <td class="parIn" id="p16">16</td>
+                        <td class="parIn" id="p17">17</td>
+                        <td class="parIn" id="p18">18</td>
                         <td id="in-par-total">in Ptotal</td>
                         <td id="all-Par-Score">ALL PAR TOTAL</td>
                     </tr>
 
                     <tr>
                         <th scope="row">Handicap</th>
-                        <td class="handIn"></td>
-                        <td class="handIn"></td>
-                        <td class="handIn"></td>
-                        <td class="handIn"></td>
-                        <td class="handIn"></td>
-                        <td class="handIn"></td>
-                        <td class="handIn"></td>
-                        <td class="handIn"></td>
-                        <td class="handIn"></td>
+                        <td class="handIn" id="h10"></td>
+                        <td class="handIn" id="h11"></td>
+                        <td class="handIn" id="h12"></td>
+                        <td class="handIn" id="h13"></td>
+                        <td class="handIn" id="h14"></td>
+                        <td class="handIn" id="h15"></td>
+                        <td class="handIn" id="h16"></td>
+                        <td class="handIn" id="h17"></td>
+                        <td class="handIn" id="h18"></td>
                         <td id="in-hand-total">in Htotal</td>
                         <td id="all-handicap">ALL HANDI TOTAL</td>
                     </tr>
@@ -186,10 +205,21 @@
             </table>
         </div>
     </div>
-
+    <template>
+        <th scope="row" class="player1In">Player 1</th>
+        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+    </template>
 
 
 
 </body>
-<script src="/js/main.js"></script>
+<script src="./js/main.js"></script>
 </html>

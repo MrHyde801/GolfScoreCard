@@ -1,26 +1,35 @@
-fetch("https://golf-courses-api.herokuapp.com/courses", {
+// fetch("https://golf-courses-api.herokuapp.com/courses", {
+//     method: "GET",
+//     headers: {
+//         "Content-Type": "application/json"
+//       }
+//     })
+//     .then(res => res.json())
+//     .then(data => {
+//       console.log(data)
+//     })
+//     .catch(err => {
+//       console.error(err)
+//     })
+       
+//question about different id
+function getCourseInfo(){
+  return fetch("https://golf-courses-api.herokuapp.com/courses/19002", {
     method: "GET",
-    headers: {
-        "Content-Type": "application/json"
-      }
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => {
+      console.log(data)
+      courseInfo = data.data
+      populateTeeBoxes(data.data)
+    })
     .catch(err => {
-         console.error(err)
-       })
+      console.error(err)
+    })
+    
+  }
 
-fetch("https://golf-courses-api.herokuapp.com/courses/19002", {
-    method: "GET",
-    headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => {
-         console.error(err)
-       })
+let courseInfo = null;
 
 let outYardSum = 0;
 let outParSum = 0;
@@ -31,13 +40,32 @@ let inParSum = 0;
 let inHandiSum = 0;
 let inPlayerSum = 0;
 
+
 const handIn = document.getElementsByClassName('handIn')
 const parIn = document.getElementsByClassName('parIn')
 const yardIn = document.getElementsByClassName('yardIn')
 const handOut = document.getElementsByClassName('handOut')
 const parOut = document.getElementsByClassName('parOut')
 const yardOut = document.getElementsByClassName('yardOut')
+// let variableOBJ = [handOut, handIn, yardIn, yardOut, parOut, parIn]
 
+
+window.onload = () => {
+  getCourseInfo()
+  let teeBoxSelect = document.getElementById('teeBox-select')
+  teeBoxSelect.addEventListener('change', (e) => selectTeeBox(e))
+}
+
+// function sum(variableOBJ) {
+//   for(let i = 0; i < variableOBJ.length; i++) {
+//   let summer[i] = 0
+//   for(x of variableOBJ[i]) {
+//     summer[i] += parseInt(x.innerHTML);
+//   }
+//   }
+//   console.log(summer[0])
+// }
+ 
 
 let sum = 0;
 
@@ -46,24 +74,71 @@ for(x of parIn) {
 }
 document.getElementById('in-par-total').innerHTML = sum;
 
+function populateCards(tbIndex) {
+  let outYard = 0
+  let inYard = 0
+  let outPar = 0
+  let inPar = 0
+  let outHand = 0
+  let inHand = 0
+  let totalYard = 0
+  let totalPar = 0
+  let totalHand = 0
+  courseInfo.holes.forEach((hole, index) => {
+    let teeBox = hole.teeBoxes[tbIndex]
+    let yardage = teeBox.yards
+    let yardBox = document.getElementById(`y${index + 1}`)
+    yardBox.innerHTML = yardage
 
-const table1 = document.getElementById('table1');
-for (let i in table1.rows) {
-  let row = table1.rows[i]
+    let parInfo = teeBox.par
+    let parBox = document.getElementById(`p${index + 1}`)
+    parBox.innerHTML = parInfo
 
-  for(let j in row.cells) {
-  }
+    let handInfo = teeBox.hcp
+    let handBox = document.getElementById(`h${index + 1}`)
+    handBox.innerHTML = handInfo
+
+    if(index < 9) {
+      outYard += yardage;
+    } else {
+      inYard += yardage;
+    }
+  })
+  let outYardTotal = document.getElementById('out-yard-total')
+  outYardTotal.innerHTML = outYard
 }
 
-const table2 = document.getElementById('table2');
-for (let i in table2.rows) {
-  let row = table2.rows[i]
-
-  for(let j in row.cells) {
-  }
+function calculateTotal() {
 }
-console.log(table1)
-console.log(table2)
+
+function saveValue(e) {
+  let value = e.target.value
+  console.log(value)
+}
+
+function populateTeeBoxes(courseInfo) {
+  console.log(courseInfo)
+  let teeBoxes = courseInfo.holes[0].teeBoxes.map((teebox , index) => {
+    let option = `<option value="${index}" >${capitalizeFirstLetter(teebox.teeColorType)}</option>`
+    return option
+  })
+  console.log(teeBoxes)
+  let teeBoxSelect = document.getElementById('teeBox-select')
+  teeBoxSelect.innerHTML = teeBoxSelect.innerHTML + teeBoxes.join('')
+  console.log(teeBoxSelect);
+}
+
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function selectTeeBox(e) {
+console.log(e)
+let tbIndex = e.target.value
+console.log(tbIndex)
+populateCards(tbIndex)
+}
 
 
+//open up function to whatever I want bow chick wowow (discord chat)
 
