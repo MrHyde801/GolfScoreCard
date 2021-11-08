@@ -152,16 +152,16 @@ let playerScore = document.querySelectorAll('.score-1')
 playerScore.forEach((input,index) => {
   input.addEventListener('change', e => {
     holesPar[index] = e.target.value
-    calculateTotals()
+    calculate1Totals()
   })
 })
 
-function calculateTotals() {
+function calculate1Totals() {
   let outTotal = 0;
   let inTotal = 0;
   let total = outTotal + inTotal;
   let outHoles = holesPar.slice(0,9)
-  let inHoles = holesPar.slice(10)
+  let inHoles = holesPar.slice(9)
   outHoles.forEach(parOut => {
     outTotal += parseInt(parOut)
   })
@@ -175,46 +175,6 @@ function calculateTotals() {
   parinScore.innerHTML = inTotal
   totalScore.innerHTML = total
 }
-
-  // counter = 0
-
-  // function getNextId() {
-  //   this.id = counter++;
-  // } 
-
-  // function renderPlayers() {
-  //   const outPlayers = document.importNode(playerOut.content, true)
-  //   const inPlayers = document.importNode(playerIn.content, true)
-
-
-// function renderPlayers() {
-//   const outPlayers = document.importNode(playerOut.content, true)
-//   const 
-//   const inPlayers = document.importNode(playerIn.content, true)
-// }
-
-/* <template id="playerIn">
-        <tr>
-            <th scope="row" class="player1Out" contenteditable="true">Player 1</th>
-            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
-            <td id="playerOutTotal"></td>
-        </tr>
-    </template> */
-
-/* <div class="task">
-<input type="checkbox" />
-<label>
-    <span class="custom-checkbox"></span>
-</label>
-</div> */
 
 function renderTasks(selectedList) {
   selectedList.tasks.forEach(task => {
