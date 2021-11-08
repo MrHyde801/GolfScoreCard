@@ -118,6 +118,34 @@ function populateCards(tbIndex) {
 
 
 
+function changePlayer1() {
+  let name1 = document.getElementById('player1Out').innerHTML
+  let box1 = document.getElementsByClassName('playerIn1') 
+  box1[0].innerHTML = name1
+}
+
+function changePlayer2() {
+  let name2 = document.getElementById('player2Out').innerHTML
+  let box2 = document.getElementsByClassName('playerIn2')
+  box2[0].innerHTML = name2 
+}
+
+function changePlayer3() {
+  let name3 = document.getElementById('player3Out').innerHTML
+  let box3 = document.getElementsByClassName('playerIn3')
+  box3[0].innerHTML = name3 
+}
+
+function changePlayer4() {
+  let name4 = document.getElementById('player4Out').innerHTML
+  let box4 = document.getElementsByClassName('playerIn4')
+  box4[0].innerHTML = name4
+}
+
+function clearData(){
+  window.location.reload();
+} 
+
 
 function populateTeeBoxes(courseInfo) {
   console.log(courseInfo)
@@ -143,15 +171,14 @@ populateCards(tbIndex)
 }
 
 
-//open up function to whatever I want bow chick wowow (discord chat)
-let holesPar = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-let parOutScore = document.getElementById('playerOutTotal')
-let parinScore = document.getElementById('playerInTotal')
-let totalScore = document.getElementById('all-score')
-let playerScore = document.querySelectorAll('.score-1')
-playerScore.forEach((input,index) => {
+let holes1Par = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+let par1OutScore = document.getElementById('player1OutTotal')
+let par1inScore = document.getElementById('player1InTotal')
+let total1Score = document.getElementById('all-1-score')
+let player1Score = document.querySelectorAll('.score-1')
+player1Score.forEach((input,index) => {
   input.addEventListener('change', e => {
-    holesPar[index] = e.target.value
+    holes1Par[index] = e.target.value
     calculate1Totals()
   })
 })
@@ -160,31 +187,116 @@ function calculate1Totals() {
   let outTotal = 0;
   let inTotal = 0;
   let total = outTotal + inTotal;
-  let outHoles = holesPar.slice(0,9)
-  let inHoles = holesPar.slice(9)
+  let outHoles = holes1Par.slice(0,9)
+  let inHoles = holes1Par.slice(9)
   outHoles.forEach(parOut => {
     outTotal += parseInt(parOut)
   })
   inHoles.forEach(parIn => {
     inTotal += parseInt(parIn)
   })
-  holesPar.forEach(par => {
+  holes1Par.forEach(par => {
     total += parseInt(par)
   })
-  parOutScore.innerHTML = outTotal
-  parinScore.innerHTML = inTotal
-  totalScore.innerHTML = total
+  par1OutScore.innerHTML = outTotal
+  par1inScore.innerHTML = inTotal
+  total1Score.innerHTML = total
 }
 
-function renderTasks(selectedList) {
-  selectedList.tasks.forEach(task => {
-      const taskElement = document.importNode(taskTemplate.content, true)
-      const checkbox = taskElement.querySelector('input')
-      checkbox.id = task.id
-      checkbox.checked = task.complete
-      const label = taskElement.querySelector('label')
-      label.htmlFor = task.id
-      label.append(task.name)
-      tasksContainer.appendChild(taskElement)
+
+let holes2Par = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+let par2OutScore = document.getElementById('player2OutTotal')
+let par2inScore = document.getElementById('player2InTotal')
+let total2Score = document.getElementById('all-2-score')
+let player2Score = document.querySelectorAll('.score-2')
+player2Score.forEach((input,index) => {
+  input.addEventListener('change', e => {
+    holes2Par[index] = e.target.value
+    calculate2Totals()
   })
+})
+
+function calculate2Totals() {
+  let outTotal = 0;
+  let inTotal = 0;
+  let total = outTotal + inTotal;
+  let outHoles = holes2Par.slice(0,9)
+  let inHoles = holes2Par.slice(9)
+  outHoles.forEach(parOut => {
+    outTotal += parseInt(parOut)
+  })
+  inHoles.forEach(parIn => {
+    inTotal += parseInt(parIn)
+  })
+  holes2Par.forEach(par => {
+    total += parseInt(par)
+  })
+  par2OutScore.innerHTML = outTotal
+  par2inScore.innerHTML = inTotal
+  total2Score.innerHTML = total
+}
+
+
+let holes3Par = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+let par3OutScore = document.getElementById('player3OutTotal')
+let par3inScore = document.getElementById('player3InTotal')
+let total3Score = document.getElementById('all-3-score')
+let player3Score = document.querySelectorAll('.score-3')
+player3Score.forEach((input,index) => {
+  input.addEventListener('change', e => {
+    holes3Par[index] = e.target.value
+    calculate3Totals()
+  })
+})
+
+function calculate3Totals() {
+  let outTotal = 0;
+  let inTotal = 0;
+  let total = outTotal + inTotal;
+  let outHoles = holes3Par.slice(0,9)
+  let inHoles = holes3Par.slice(9)
+  outHoles.forEach(parOut => {
+    outTotal += parseInt(parOut)
+  })
+  inHoles.forEach(parIn => {
+    inTotal += parseInt(parIn)
+  })
+  holes3Par.forEach(par => {
+    total += parseInt(par)
+  })
+  par3OutScore.innerHTML = outTotal
+  par3inScore.innerHTML = inTotal
+  total3Score.innerHTML = total
+}
+
+let holes4Par = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+let par4OutScore = document.getElementById('player4OutTotal')
+let par4inScore = document.getElementById('player4InTotal')
+let total4Score = document.getElementById('all-4-score')
+let player4Score = document.querySelectorAll('.score-4')
+player4Score.forEach((input,index) => {
+  input.addEventListener('change', e => {
+    holes4Par[index] = e.target.value
+    calculate4Totals()
+  })
+})
+
+function calculate4Totals() {
+  let outTotal = 0;
+  let inTotal = 0;
+  let total = outTotal + inTotal;
+  let outHoles = holes4Par.slice(0,9)
+  let inHoles = holes4Par.slice(9)
+  outHoles.forEach(parOut => {
+    outTotal += parseInt(parOut)
+  })
+  inHoles.forEach(parIn => {
+    inTotal += parseInt(parIn)
+  })
+  holes4Par.forEach(par => {
+    total += parseInt(par)
+  })
+  par4OutScore.innerHTML = outTotal
+  par4inScore.innerHTML = inTotal
+  total4Score.innerHTML = total
 }

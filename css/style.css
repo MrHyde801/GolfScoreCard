@@ -2,7 +2,7 @@ body {
   background-color: #FAFFD8;
 }
 
-.table-responsive-md {
+.table-responsive-lg {
   background-color: white;
   margin: 30px;
 }
@@ -30,8 +30,19 @@ input {
   width: 40px;
 }
 
-#all-score {
+.all-score-style {
   font-weight: bold;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: #001B2E;
+  color: #FAFFD8;
+  padding: 0 1px;
 }
 
 /*# sourceMappingURL=style.css.map */

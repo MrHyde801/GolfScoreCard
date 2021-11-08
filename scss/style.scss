@@ -5,7 +5,7 @@ body {
 }
 
 
-.table-responsive-md {
+.table-responsive-lg {
     background-color: white;
     margin:30px;
 }
@@ -33,6 +33,17 @@ input {
     width: 40px;
 }
 
-#all-score {
+.all-score-style {
     font-weight: bold;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background: $oxfordblue;
+    color: $lightgy;
+    padding: 0 1px;
 }
