@@ -10,17 +10,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12" id="header"></div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div id="options-container"></div>
-            </div>
-        </div>
         <div class="form-group">
             <form action="" >
-                <h1>Spanish Oaks ScoreCa</h1>
+                <h1>Spanish Oaks ScoreCard</h1>
                 <!-- <label for="course-select">Select Course</label>
                 <select class="form-control" id="course-select" name="courses">
                     <option value="Select">Select</option>
@@ -110,7 +102,7 @@
                     </tr>
 
                     <tr>
-                        <th scope="row" class="player1Out">Player 1</th>
+                        <th scope="row" class="player1Out" contenteditable="true">Player 1</th>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
                         <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
@@ -176,7 +168,7 @@
                         <td id="all-par"></td>
                     </tr>
 
-                    <tr>
+                    <tr class="in-hand-row">
                         <th scope="row">Handicap</th>
                         <td class="handIn" id="h10"></td>
                         <td class="handIn" id="h11"></td>
@@ -192,36 +184,54 @@
                     </tr>
 
                     <tr>
-                        <th scope="row" class="player1In" contenteditable="true"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th scope="row" class="player1In" contenteditable="true">Out Player</th>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+                        <td id="playerInTotal"></td>
+                        <td id="all-score"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <template>
-        <th scope="row" class="player1In"></th>
-        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
-        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
-        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
-        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
-        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
-        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
-        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
-        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
-        <td><input type="number" id="quantity" name="quantity" min="1" placeholder="0"></td>
+    <template id="playerIn">
+        <tr>
+            <th scope="row" class="player1Out" contenteditable="true">Player 1</th>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td id="playerOutTotal"></td>
+        </tr>
     </template>
-
+    <template id="playerOut">
+        <tr>
+            <th scope="row" class="player1In" contenteditable="true">Out Player</th>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td id="playerInTotal"></td>
+            <td id="all-score"></td>
+        </tr>
+    </template>
 
 
 </body>

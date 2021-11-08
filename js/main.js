@@ -62,9 +62,7 @@ function populateCards(tbIndex) {
   let inPar = 0
   let outHand = 0
   let inHand = 0
-  let totalYard = 0
-  let totalPar = 0
-  let totalHand = 0
+
   courseInfo.holes.forEach((hole, index) => {
     let teeBox = hole.teeBoxes[tbIndex]
     let yardage = teeBox.yards
@@ -118,13 +116,8 @@ function populateCards(tbIndex) {
   allHand.innerHTML = outHand + inHand
 }
 
-// function calculateTotal() {
-// }
 
-// function saveValue(e) {
-//   let value = e.target.value
-//   console.log(value)
-// }
+
 
 function populateTeeBoxes(courseInfo) {
   console.log(courseInfo)
@@ -151,23 +144,87 @@ populateCards(tbIndex)
 
 
 //open up function to whatever I want bow chick wowow (discord chat)
-let outHolesPar = [0,0,0,0,0,0,0,0,0]
-let outParScore = document.getElementById('playerOutTotal')
-let outPlayerScore = document.querySelectorAll('.score-1')
-outPlayerScore.forEach((input,index) => {
+let holesPar = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+let parOutScore = document.getElementById('playerOutTotal')
+let parinScore = document.getElementById('playerInTotal')
+let totalScore = document.getElementById('all-score')
+let playerScore = document.querySelectorAll('.score-1')
+playerScore.forEach((input,index) => {
   input.addEventListener('change', e => {
-    outHolesPar[index] = e.target.value
-    calculateTotal()
+    holesPar[index] = e.target.value
+    calculateTotals()
   })
 })
 
-function calculateTotal() {
-  let total = 0;
-  outHolesPar.forEach(parOut => {
-    total += parseInt(parOut)
+function calculateTotals() {
+  let outTotal = 0;
+  let inTotal = 0;
+  let total = outTotal + inTotal;
+  let outHoles = holesPar.slice(0,9)
+  let inHoles = holesPar.slice(10)
+  outHoles.forEach(parOut => {
+    outTotal += parseInt(parOut)
   })
-
-  outParScore.innerHTML = total
+  inHoles.forEach(parIn => {
+    inTotal += parseInt(parIn)
+  })
+  holesPar.forEach(par => {
+    total += parseInt(par)
+  })
+  parOutScore.innerHTML = outTotal
+  parinScore.innerHTML = inTotal
+  totalScore.innerHTML = total
 }
 
+  // counter = 0
 
+  // function getNextId() {
+  //   this.id = counter++;
+  // } 
+
+  // function renderPlayers() {
+  //   const outPlayers = document.importNode(playerOut.content, true)
+  //   const inPlayers = document.importNode(playerIn.content, true)
+
+
+// function renderPlayers() {
+//   const outPlayers = document.importNode(playerOut.content, true)
+//   const 
+//   const inPlayers = document.importNode(playerIn.content, true)
+// }
+
+/* <template id="playerIn">
+        <tr>
+            <th scope="row" class="player1Out" contenteditable="true">Player 1</th>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td><input type="number" class="score-1" name="quantity" min="1" placeholder="0"></td>
+            <td id="playerOutTotal"></td>
+        </tr>
+    </template> */
+
+/* <div class="task">
+<input type="checkbox" />
+<label>
+    <span class="custom-checkbox"></span>
+</label>
+</div> */
+
+function renderTasks(selectedList) {
+  selectedList.tasks.forEach(task => {
+      const taskElement = document.importNode(taskTemplate.content, true)
+      const checkbox = taskElement.querySelector('input')
+      checkbox.id = task.id
+      checkbox.checked = task.complete
+      const label = taskElement.querySelector('label')
+      label.htmlFor = task.id
+      label.append(task.name)
+      tasksContainer.appendChild(taskElement)
+  })
+}

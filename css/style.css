@@ -22,4 +22,16 @@ body {
   color: white;
 }
 
+.out-hand-row, .in-hand-row {
+  background-color: #dadfea;
+}
+
+input {
+  width: 40px;
+}
+
+#all-score {
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=style.css.map */
